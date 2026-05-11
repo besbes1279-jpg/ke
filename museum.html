@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Egyptian Museum</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Cinzel+Decorative:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+
+    <style>
+        .hero {
+            height: 100vh;
+            background: url(media/main.jpg.jpeg) no-repeat center/cover;
+            display: flex;
+            align-items: center;
+            padding: 0 60px;
+            color: var(--text);
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            left: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .collection {
+            padding: 80px 60px;
+            background: var(--card);
+            text-align: center;
+        }
+
+        .collection h2 {
+            font-size: 33px;
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+
+        .subtitle {
+            color: var(--secondary);
+            margin-bottom: 40px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--card);
+            border-radius: 12px;
+            overflow: hidden;
+            text-align: left;
+            transition: 0.2s;
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            padding: 15px;
+            font-size: 15px;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .visit-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--card);
+            padding: 15px 30px;
+            border-radius: 5px;
+            color: var(--text);
+        }
+
+        .visit-text {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        .visit-btn {
+            background-color: var(--accent);
+            color: var(--card);
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .visit-btn:hover {
+            color: gold;
+        }
+
+        .visit-btn:hover {
+            color: #fff;
+            background-color: #b8952e;
+        }
+
+        body.dark .hero {
+            color: var(--text);
+        }
+
+        body.dark .collection {
+            background: var(--card);
+        }
+
+        body.dark .card {
+            background: var(--card);
+            color: var(--text);
+        }
+
+        body.dark .visit-content {
+            background: var(--card);
+            color: var(--text);
+        }
+
+        body.dark .visit-btn {
+            background: var(--accent);
+            color: var(--card);
+        }
+    </style>
+        <link rel="stylesheet" href="./css/navbar-auth.css">
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+          <h1 id="name">KEMET MUSE</h1>
+    
+    
+          <ul class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="great_kings.html">Great Kings</a>
+            <a href="museum.html" class="Active">The Museum</a>
+            <a href="famous-sites.html">Famous Sites</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="tickets.html">Tickets</a>
+            <a href="contact_us.html">Contact Us</a>
+          </ul>
+          <div class="auth-area">
+            <span id="navUser"></span>
+            <button id="loginNav">Login</button>
+            <button id="signupNav">Signup</button>
+            <button id="logoutNav">Logout</button>
+          </div>
+          <button class="theme-btn" onclick="toggleTheme()">🌙</button>
+        </nav>
+    
+      </header>
+
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>The Egyptian Museum</h1>
+            <p>A journey through thousands of years of ancient Egyptian history</p>
+        </div>
+    </section>
+
+    <section class="collection">
+        <h2>Museum Collection</h2>
+        <p class="subtitle">
+            Explore our remarkable collection of ancient artifacts that tell the story of a great civilization
+        </p>
+        <div class="cards">
+            <div class="card">
+                <img src="media/museum.jpeg" alt="Museum Grandeur">
+                <h3>Museum Grandeur</h3>
+            </div>
+            <div class="card">
+                <img src="media/2nd.jpeg" alt="Pharaonic Gold">
+                <h3>Pharaonic Gold</h3>
+            </div>
+            <div class="card">
+                <img src="media/3rd.jpeg" alt="Intricate Details">
+                <h3>Intricate Details</h3>
+            </div>
+            <div class="card">
+                <img src="media/4th.jpeg" alt="Guardian Sphinx">
+                <h3>Guardian Sphinx</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="visit">
+        <div class="visit-content">
+            <a href="tickets.html" class="visit-btn">Book Your Ticket now</a>
+        </div>
+    </section>
+
+    <footer>
+        <p> © 2026 Ancient Egypt Project
+        </p>
+        <div>
+            <a href="https://Fasebook.com//">Fasebook</a>
+            <a href="https://Instagram.com//">Instagram</a>
+            <a href="https://X.com//">x</a>
+        </div>
+    </footer>
+    <script>
+        if (localStorage.getItem("isLoggedIn") !== "true") {
+          alert("You must login first");
+          window.location.href = "login.html";
+        }
+      </script>
+    <script src="js/auth.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

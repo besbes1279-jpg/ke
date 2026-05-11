@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/global.css">
+  <style>
+    :root {
+    --gold-gradient: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+    --dark-brown: #2d1b10;
+    --kemet-cream: #f9f6f2;
+    --soft-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+
+    body {
+    background-image: linear-gradient(135deg, #e8cc9b 0%, #c6a664 50%, #915f4a 100%);
+    background-attachment: fixed;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+}
+
+    
+   .signup-card {
+    background-color: var(--kemet-cream);
+    padding: 40px;
+    width: 400px;
+    border-radius: 24px;
+    box-shadow: var(--soft-shadow);
+    text-align: center;
+    border: 2px solid #e2d1b9;
+}
+
+.signup-card h2 {
+    margin-bottom: 25px;
+    color: var(--dark-brown);
+    font-size: 28px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.field {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 700;
+    font-size: 12px;
+    color: var(--dark-brown);
+    text-transform: uppercase;
+}
+
+.field input {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 1px solid #dcd0c0;
+    background-color: #ffffff;
+    font-size: 15px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.field input:focus {
+    outline: none;
+    border-color: #b38728;
+    box-shadow: 0 0 0 3px rgba(179, 135, 40, 0.1);
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background: var(--gold-gradient);
+    color: var(--dark-brown);
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(179, 135, 40, 0.2);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(179, 135, 40, 0.3);
+}
+
+.note {
+    margin-top: 25px;
+    font-size: 14px;
+    color: #7a6a5e;
+}
+
+.note a {
+    color: #b38728;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.note a:hover {
+    text-decoration: underline;
+}
+
+    
+  </style>
+</head>
+
+<body>
+
+  <div class="signup-card">
+    <h2>Create Account</h2>
+
+    <div class="field">
+      <label for="username">Username</label>
+      <input type="text" id="username" placeholder="Enter username">
+    </div>
+
+    <div class="field">
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter email">
+    </div>
+
+    <div class="field">
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Enter password">
+    </div>
+
+    <div class="field">
+      <label for="confirm">Confirm Password</label>
+      <input type="password" id="confirm" placeholder="Confirm password">
+    </div>
+
+    <button onclick="signup()">Sign Up</button>
+
+    <p class="note">
+      Already have an account?
+      <a href="login.html">Login</a>
+    </p>
+  </div>
+
+  <script>
+    function signup() {
+      const username = document.getElementById("username").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const confirm = document.getElementById("confirm").value;
+
+      if (!username || !email || !password || !confirm) {
+        alert("Please fill all fields");
+        return;
+      }
+
+      if (password.length < 4) {
+        alert("Password must be at least 4 characters");
+        return;
+      }
+
+      if (password !== confirm) {
+        alert("Passwords do not match");
+        return;
+      }
+
+      const user = {
+        username,
+        email,
+        password
+      };
+
+      localStorage.setItem("user", JSON.stringify(user));
+      localStorage.setItem("isLoggedIn", "true");
+
+      alert("Account created successfully!");
+      window.location.href = "index.html";
+    }
+  </script>
+
+</body>
+</html>

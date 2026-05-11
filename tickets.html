@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tickets Booking</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="./css/navbar-auth.css">
+        <link rel="stylesheet" href="css/global.css">
+
+    <style>
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+        }
+
+        h1,
+        h2,
+        label {
+            font-family: "Cinzel Decorative", serif;
+        }
+
+        p {
+            color: var(--secondary);
+        }
+
+        #ticket-card {
+            background-color: var(--card);
+            display: flex;
+            /*بيخلي الصفحة مرنة و تشتغل كفليكس بوكس */
+            flex-direction: column;
+            /*بيخلي الحاجات تحت بعض*/
+            width: 85%;
+            /* ياخد مساحة الشاشة كلها في الموبايل */
+            max-width: 750px;
+            /* بس لما الشاشة تكبر، ميزيدش عن 600 بكسل عشان ميبقاش عريض بزيادة */
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px auto;
+            box-shadow: 0px 10px 30px rgba(139, 69, 19, 0.365);
+            border: 1px solid var(--accent);
+
+        }
+
+        #ticket-card:hover {
+            transform: scale(1.01);
+            transition: 0.3s;
+        }
+
+        body.dark #ticket-card {
+            border-radius: 0px;
+            box-shadow: 0px 0px 25px var(--accent);
+            border-width: 2px;
+        }
+
+        body.dark input,
+        body.dark .submit-btn,
+        body.dark #ticket-card {
+            border-radius: 0px;
+        }
+
+        .museumimgs {
+            display: inline;
+            width: 150px;
+            height: 130px;
+            padding: 8px;
+            margin: auto;
+            border: 0;
+            border-radius: 20%;
+            filter: brightness(0.9);
+            margin-bottom: 6px;
+        }
+
+        .museumimgs:hover {
+            transform: scale(1.1);
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            gap: 20px;
+            margin: auto;
+        }
+
+        input,
+        #museum {
+            font-size: 20px;
+            display: block;
+            padding: 15px;
+            border: 1px solid var(--accent);
+            background-color: var(--card);
+            border-radius: 10px;
+        }
+
+        #museum:hover,
+        #date {
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            background-color: var(--accent);
+            color: var(--bg);
+            font-size: 16px;
+            border: 0px;
+            padding: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--bg);
+            color: var(--accent);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        @media (max-width: 600px) {
+
+            .content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .museumimgs {
+                width: 80%;
+                height: auto;
+                margin-bottom: 15px;
+            }
+
+            h1 {
+                font-size: 22px;
+                text-align: center;
+            }
+
+            input,
+            .submit-btn {
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+          <h1 id="name">KEMET MUSE</h1>
+    
+    
+          <ul class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="great_kings.html">Great Kings</a>
+            <a href="museum.html" class="Active">The Museum</a>
+            <a href="famous-sites.html">Famous Sites</a>
+            <a href='gallery.html'>Gallery</a>
+            <a href="tickets.html">Tickets</a>
+            <a href="contact_us.html">Contact Us</a>
+          </ul>
+          <div class="auth-area">
+            <span id="navUser"></span>
+            <button id="loginNav">Login</button>
+            <button id="signupNav">Signup</button>
+            <button id="logoutNav">Logout</button>
+          </div>
+          <button class="theme-btn" onclick="toggleTheme()">🌙</button>
+        </nav>
+    
+      </header>
+    <main>
+        <div id="ticket-card">
+
+            <div class="content">
+                <h1><i>Book Your Tickets</i></h1>
+                <p>Walk Among Heritage.Visit Your Muse Right Now.</p>
+                <hr>
+                <img src="media/bsm1.jpeg" alt="Grand Egyptian Museum " class="museumimgs">
+                <img src="media/bsm2.jpeg" alt="masterpiece of ancient architecture." class="museumimgs">
+                <img src="media/bsm3.jpeg" alt="Iconic monuments." class="museumimgs">
+                <img src="media/bsm4.jpeg" alt="Iconic monuments." class="museumimgs">
+            </div>
+
+            <div class="bookform">
+                <form id="form" onsubmit="return CheckValidation()">
+                    <h2><i>Book Now</i></h2>
+                    <div id="error"></div>
+
+                    <select name="museum" id="museum">
+
+                        <option value="place">Select A Place For Your Visit</option>
+                        <option value="Khufu">The Great Pyramid of Giza In Cairo</option>
+                        <option value="gem">the Grand Egyptian Museum In Cairo.</option>
+                        <option value="Hatshepsut">Hatshepsut Temple In Luxor.</option>
+                        <option value="Tutankhamun">Tomb of Tutankhamun In Luxor.</option>
+                        <option value="Cleopatra">Temple of Dendera In Qena.</option>
+                        <option value="simbel">Abu Simbel Temples In Aswan.</option>
+
+                    </select>
+
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Full Name" name="fullname" id="fullname">
+                    <!--- الاي دي بستخدمه و انا ببرمج و النيم ده عشان لما ابعت بيانات لسيرفر مستقبلا
+        عامة يا بنات النيم عامل زي العنوان الخارجي للانبوت دي بالاضافة
+        الى انه ستاندرد يتحط في الانبوت عشان لو سأل عليها -->
+
+                    <label>visiting date</label>
+                    <input type="date" name="date" id="date">
+
+                    <label>Number of tickets for adults (200L.E)</label>
+                    <input type="number" placeholder="0" min="1" name="num4adult" id="num4adult">
+
+                    <label>Number of tickets for students (75L.E)</label>
+                    <input type="number" placeholder="0" min="1" name="num4stud" id="num4stud">
+
+                    <label>Number of tickets for children (50L.E)</label>
+                    <input type="number" placeholder="0" min="1" name="num4child" id="num4child">
+
+                    <label>E-mail</label>
+                    <input type="email" placeholder="example@gmail.com" name="email" id="email">
+
+                    <input type="submit" class="submit-btn" value="Buy">
+
+                </form>
+
+            </div>
+        </div>
+
+    </main>
+
+  <footer>
+    <p> © 2026 Ancient Egypt Project
+    </p>
+    <div>
+      <a href="https://Fasebook.com//">Fasebook</a>
+      <a href="https://Instagram.com//">Instagram</a>
+      <a href="https://X.com//">x</a>
+    </div>
+  </footer>
+
+
+  <script>
+    if (localStorage.getItem("isLoggedIn") !== "true") {
+      alert("You must login first");
+      window.location.href = "login.html";
+    }
+  </script>
+    <script>function CheckValidation() {
+            // هعرف متغيرات وهخزن فيها اللي اليوزر هيكتبه
+            var meuseumChoice = document.getElementById('museum').value;
+            var fullName = document.getElementById('fullname').value;
+            var date = document.getElementById('date').value;
+            var student = Number(document.getElementById('num4stud').value);
+            var child = Number(document.getElementById('num4child').value);
+            var adult = Number(document.getElementById('num4adult').value);
+            var email = document.getElementById('email').value;
+
+
+            // هعمل شروط لكل واحدة فاضية بيطلع ليها تحذير انها فاضية
+            if (meuseumChoice == 'place') {
+                alert('Please Pick A Place To Book For.')
+                return false;
+            }
+
+            if (fullName === '' || fullName == null) {
+                alert('Please Enter Your Full Name.') //التحذير اهو 
+                return false; // القيمة اللي هترجع و تخلي اليوزر
+                //  ميسيبهاش فاضية و يكمل و في نفس الوقت بتمنع ان الصفحة تريفرش
+            }
+
+            if (date === '' || date == null) {
+                alert('Please Choose A Date For Your Visit.')
+                return false;
+
+            }
+
+            let tickets = adult + student + child;
+            if (tickets == 0) {
+                alert('Please Choose Tickets To Buy.')
+                return false;
+
+            }
+
+            if (email === '' || email == null) {
+                alert('Please Write A Valid Email.')
+                return false;
+
+            }
+
+            alert('Thank you for booking! Your tickets are on the way to your email address.')
+            return true;
+
+        }</script>
+
+    <script src="./js/main.js"></script>
+    <script src="js/auth.js"></script>
+  
+</body>
+
+</html>

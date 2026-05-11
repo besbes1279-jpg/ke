@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+  :root {
+    --gold-gradient: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+    --dark-brown: #2d1b10;
+    --kemet-cream: #f9f6f2;
+    --soft-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+    body {
+      background-image: url("media/Kemet.jpeg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+      margin: 0;
+      height: 100vh;
+      font-family: "Montserrat", sans-serif;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    
+.login-card {
+    background-color: var(--kemet-cream);
+    padding: 50px 40px;
+    width: 380px;
+    border-radius: 24px;
+    box-shadow: var(--soft-shadow);
+    text-align: center;
+    border: 2px solid #e2d1b9;
+    position: relative;
+}
+
+.login-card h2 {
+    margin-bottom: 10px;
+    color: var(--dark-brown);
+    font-size: 32px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.login-card p {
+    color: #8b5e3c;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.field {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--dark-brown);
+    text-transform: uppercase;
+}
+
+.field input {
+    width: 100%;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid #dcd0c0;
+    background-color: #ffffff;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.field input:focus {
+    outline: none;
+    border-color: #b38728;
+    box-shadow: 0 0 0 4px rgba(179, 135, 40, 0.1);
+}
+
+button {
+    width: 100%;
+    padding: 16px;
+    background: var(--gold-gradient);
+    color: var(--dark-brown);
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 800;
+    cursor: pointer;
+    margin-top: 15px;
+    box-shadow: 0 4px 15px rgba(179, 135, 40, 0.3);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(179, 135, 40, 0.4);
+}
+
+.note {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #7a6a5e;
+}
+
+.note a {
+    color: #b38728;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.note a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+  </style>
+</head>
+
+<body>
+
+  <div class="login-card">
+    <h1>WELCOME BACK</h1>
+    <p> Login and explor the wonders</p>
+<br>
+    <div class="field">
+      <label for="ee">Email Address</label>
+      <input type="email" id="ee" placeholder="Enter your email">
+    </div>
+
+    <div class="field">
+      <label for="pp">Password</label>
+      <input type="password" id="pp" placeholder="Enter your password" maxlength="12">
+    </div>
+
+    <button onclick="login()">Login</button>
+    <p class="note">
+        Don't have an account?
+        <a href="signup.html">signup</a>
+      </p>
+  </div>
+
+  <script>
+    function login() {
+      const email = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+    
+      const user = JSON.parse(localStorage.getItem("user"));
+    
+      if (!user) {
+        alert("No account found. Please sign up first.");
+        return;
+      }
+    
+      if (email === user.email && password === user.password) {
+        localStorage.setItem("isLoggedIn", "true");
+        alert("Login successful");
+        window.location.href = "index.html";
+      } else {
+        alert("Wrong email or password");
+      }
+    }
+    </script>
+
+</body>
+</html>

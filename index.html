@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Kings of Ancient Egypt</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="./css/navbar-auth.css">
+  <link rel="stylesheet" href="./css/global.css">
+  <style>
+    :root {
+      --bg: #F5F5DC;
+      --card: #FFFFFF;
+      --text: #2C2C2C;
+      --accent: #D4AF37;
+      --secondary: #2F4F4F;
+      --nav: #ffffff;
+      --btn: #333;
+      --btn-text: #fff;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      transition: 0.3s;
+    }
+
+
+
+    #logo,
+    #name {
+      font-size: 24px;
+      color: var(--accent);
+      letter-spacing: 1px;
+    }
+
+    a {
+      padding: 5px 10px;
+      text-decoration: none;
+      border-radius: 35px;
+      color: var(--text);
+    }
+
+    a:hover {
+      color: var(--accent);
+    }
+
+    #t-btn {
+      background-color: var(--btn);
+      color: var(--btn-text);
+      border: none;
+      padding: 8px 15px;
+      border-radius: 20px;
+    }
+
+    #t-btn:hover {
+      background-color: var(--accent);
+    }
+
+    #sec1 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 60px 8%;
+      background-color: var(--card);
+      min-height: 80vh;
+    }
+
+    #sec1-content {
+      flex: 1;
+    }
+
+    #sec1-content h1 {
+      font-size: 3.5rem;
+      color: var(--text);
+    }
+
+    #sec1-content p {
+      font-size: 1.2rem;
+      color: var(--secondary);
+      margin-bottom: 30px;
+    }
+
+    #sec1-btn {
+      padding: 12px 30px;
+      background-color: var(--accent);
+      color: var(--card);
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    #sec1-btn:hover {
+      background-color: var(--secondary);
+      color: var(--text);
+    }
+
+    #sec1-image {
+      flex: 1;
+      text-align: center;
+    }
+
+    #sec1-image img {
+      max-width: 100%;
+      border-radius: 20px;
+      box-shadow: 20px 20px 60px var(--secondary);
+    }
+
+    #sec2 {
+      align-items: center;
+      padding: 80px 15%;
+      background-color: var(--card);
+      min-height: 80vh;
+    }
+
+    #sec2 h2 {
+      font-size: 2.5rem;
+      color: var(--accent);
+      align-items: center;
+    }
+
+    #sec2 p {
+      font-size: 1.3rem;
+      line-height: 1.8;
+      color: var(--secondary);
+    }
+
+    #sec2-image {
+      flex: 1;
+      text-align: center;
+    }
+
+    #sec2-image img {
+      max-width: 100%;
+      border-radius: 20px;
+    }
+
+    #sec3 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 5%;
+      background-color: var(--card);
+      min-height: 80vh;
+    }
+
+    #card {
+      background-color: var(--card);
+      border-radius: 15px;
+      width: 350px;
+      overflow: hidden;
+      box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding: 0;
+    }
+
+    #card:hover {
+      box-shadow: 20px 20px 60px var(--accent);
+      transform: translateY(-10px);
+    }
+
+    #card img {
+      width: 100%;
+      height: 200px;
+    }
+
+    #card h3 {
+      color: var(--text);
+    }
+
+    #card p {
+      font-size: 0.9rem;
+      color: var(--secondary);
+    }
+
+    #card a {
+      color: var(--text);
+      padding: 30px;
+      font-size: 0.9rem;
+    }
+
+    #card a:hover {
+      color: var(--accent);
+    }
+
+
+  </style>
+
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+      <h1 id="name">KEMET MUSE</h1>
+
+
+      <ul class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="great_kings.html">Great Kings</a>
+        <a href="museum.html" class="Active">The Museum</a>
+        <a href="famous-sites.html">Famous Sites</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="tickets.html">Tickets</a>
+        <a href="contact_us.html">Contact Us</a>
+      </ul>
+      <div class="auth-area">
+        <span id="navUser"></span>
+        <button id="loginNav">Login</button>
+        <button id="signupNav">Signup</button>
+        <button id="logoutNav">Logout</button>
+      </div>
+      <button class="theme-btn" onclick="toggleTheme()">🌙</button>
+    </nav>
+
+  </header>
+
+
+  <main>
+    <section id="sec1">
+      <div id="sec1-content">
+        <h1>Welcome to <br> KEMET MUSE</h1>
+        <p>Where History Breathes and Myths Come to Life</p>
+        <a href="#sec2" id="sec1-btn">Explore Now</a>
+      </div>
+      <div id="sec1-image">
+        <img src="media/ts1.jpeg" alt="KEMET" width="2000PX ">
+      </div>
+    </section>
+
+    <section id="sec2">
+      <h2>An Eternal Inspiration</h2>
+      <P>
+        KEMET MUSE is a tribute to the land where creativity first bloomed.
+        It is a space where the wisdom of the past meets the vision of the future.
+        We celebrate the timeless artistry of Ancient Egypt,
+        drawing inspiration from its majestic monuments and profound philosophy to prove that the spirit of Kemet
+        continues to inspire greatness in every era.
+      </P>
+      <div id="sec2-image">
+        <a href="#sec3">
+          <img src="media/ts2.jpeg" alt="Kings" height="400px">
+        </a>
+      </div>
+    </section>
+
+    <section id="sec3">
+      <div id="card">
+        <h3>The Great Kings</h3>
+        <p>The mighty rulers of the Nile.</p>
+        <a href="great_kings.html">See More</a>
+        <img src="media/ts3.jpeg" alt="Kings">
+
+      </div>
+
+
+      <div id="card">
+        <h3>The Museums</h3>
+        <p>Vaults of golden treasures.</p>
+        <a href="museum.html">See More</a>
+        <img src="media/ts4.jpeg" alt="Museums">
+      </div>
+
+
+      <div id="card">
+
+        <h3>The Monuments</h3>
+        <p>Engineering miracles of the ancient world</p>
+        <a href="monuments.html">See More</a>
+        <img src="media/ts5.jpeg" alt="Monuments">
+      </div>
+
+    </section>
+  </main>
+
+
+  <footer>
+    <p> © 2026 Ancient Egypt Project
+    </p>
+    <div>
+      <a href="https://Fasebook.com//">Fasebook</a>
+      <a href="https://Instagram.com//">Instagram</a>
+      <a href="https://X.com//">x</a>
+    </div>
+  </footer>
+  
+  <script src="js/auth.js"></script>
+
+
+  <script src="js/main.js">;</script>
+
+</body>
+
+</html>

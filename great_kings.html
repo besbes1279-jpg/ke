@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Kings of Ancient Egypt</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="./css/global.css">
+
+  <style>
+    main {
+      padding: 30px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .kings-cards {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .king-card {
+      background: var(--card);
+      width: 250px;
+      padding: 15px;
+      border-radius: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .king-card:hover {
+      transform: translateY(-10px);
+      cursor: pointer;
+    }
+
+    .king-card i {
+      font-size: 30px;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .king-card img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 20px;
+      display: block;
+      overflow: hidden;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 40px 0;
+      background: var(--card);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background: var(--accent);
+      color: #000;
+    }
+
+    tr {
+      transition: transform 0.3s ease;
+    }
+
+    tr:hover {
+      transform: translateY(-5px);
+      cursor: pointer;
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .fact-box {
+      background: var(--card);
+      padding: 15px;
+      border-radius: 6px;
+    }
+
+    .audio-section {
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    .visit-btn {
+      background-color: #D4AF37;
+      color: #000;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .visit-btn:hover {
+      color: #fff;
+      background-color: #b8952e;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+      <h1 id="name">KEMET MUSE</h1>
+
+
+      <ul class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="great_kings.html">Great Kings</a>
+        <a href="museum.html" class="Active">The Museum</a>
+        <a href="famous-sites.html">Famous Sites</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="tickets.html">Tickets</a>
+        <a href="contact_us.html">Contact Us</a>
+      </ul>
+      <div class="auth-area">
+        <span id="navUser"></span>
+        <button id="loginNav">Login</button>
+        <button id="signupNav">Signup</button>
+        <button id="logoutNav">Logout</button>
+      </div>
+      <button class="theme-btn" onclick="toggleTheme()">🌙</button>
+    </nav>
+
+  </header> 
+
+  <main>
+    <h1>Kings of Ancient Egypt</h1>
+
+    <section class="kings-cards">
+      <article class="king-card">
+        <i class="fa-solid fa-chess-queen"></i>
+
+        <h3>Hatshepsut</h2>
+          <p>The powerful queen who built Deir el-Bahari temple and expanded Egypt’s trade routes.</p>
+          <img src="media/Hatshepsut.png" alt="Hatshepsut">
+
+
+
+      </article>
+      <article class="king-card">
+        <i class="fa-solid fa-crown"></i>
+        <h3>Ramses II</h3>
+        <p>One of the most powerful pharaohs.</p>
+        <img src="media/ramses.jpg" alt="">
+      </article>
+
+      <article class="king-card">
+        <i class="fa-solid fa-crown"></i>
+        <h3>Tutankhamun</h3>
+        <p>Famous for his intact tomb.</p>
+        <img src="media/tut.jpg " alt="">
+      </article>
+
+      <article class="king-card">
+        <i class="fa-solid fa-crown"></i>
+        <h3>Khufu</h3>
+        <p>Builder of the Great Pyramid.</p>
+        <img src="media/khufo.png" alt="">
+      </article>
+      <article class="king-card">
+        <i class="fa-solid fa-chess-queen"></i>
+        <h3>Cleopatra VII</h3>
+        <p>The last pharaoh of Egypt, known for her intelligence, political alliances, and dramatic life story with
+          Rome.</p>
+        <img src="media/cleo.png" alt="">
+
+
+
+      </article>
+    </section>
+
+    <table>
+      <tr>
+        <th>King</th>
+        <th>Reign</th>
+        <th>Achievement</th>
+        <th>Tomb</th>
+      </tr>
+      <tr>
+        <td>Hatshepsut</td>
+        <td>21 years</td>
+        <td>Built Deir el-Bahari temple, expanded trade</td>
+        <td>Deir el-Bahari</td>
+      </tr>
+      <tr>
+        <td>Ramses II</td>
+        <td>66 years</td>
+        <td>Military victories, Abu Simbel temples</td>
+        <td>KV7</td>
+      </tr>
+      <tr>
+        <td>Tutankhamun</td>
+        <td>10 years</td>
+        <td>Golden Mask, intact tomb</td>
+        <td>KV62</td>
+      </tr>
+      <tr>
+        <td>Khufu</td>
+        <td>23 years</td>
+        <td>Built the Great Pyramid</td>
+        <td>Giza</td>
+      </tr>
+      <tr>
+        <td>Cleopatra VII</td>
+        <td>21 years</td>
+        <td>Political alliances, last Pharaoh of Egypt</td>
+        <td>Alexandria (lost tomb)</td>
+      </tr>
+    </table>
+
+    <section>
+      <h2>Fun Facts</h2>
+      <div class="facts">
+        <div class="fact-box">Pharaohs were considered gods.</div>
+        <div class="fact-box">They wore crowns to show power.</div>
+        <div class="fact-box">Tombs were filled with treasures.</div>
+      </div>
+    </section>
+
+    <section class="audio-section">
+      <h2>Audio Guide</h2>
+      <audio controls autoplay loop>
+        <source src="media/Voice_recording.mp3" type="audio/mpeg">
+        Your browser does not support audio.
+      </audio>
+    </section>
+  </main>
+  <section class="visit">
+    <div class="visit-content">
+      <a href="tickets.html" class="visit-btn">Book Your Ticket now</a>
+    </div>
+  </section>
+
+  <footer>
+    <p> © 2026 Ancient Egypt Project
+    </p>
+    <div>
+      <a href="https://Fasebook.com//">Fasebook</a>
+      <a href="https://Instagram.com//">Instagram</a>
+      <a href="https://X.com//">x</a>
+    </div>
+  </footer>
+  <script>
+    if (localStorage.getItem("isLoggedIn") !== "true") {
+      alert("You must login first");
+      window.location.href = "login.html";
+    }
+  </script>
+  <script src="js/auth.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+
+</html>

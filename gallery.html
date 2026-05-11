@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEMET MUSE - Gallery</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Cinzel+Decorative:wght@400;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="global.css">
+   
+
+    <style>
+        /* Navbar Title */
+       :root {
+  --bg: #F5F5DC;
+  --card: #FFFFFF;
+  --text: #2C2C2C;
+  --accent: #8B4513;
+  --secondary: #2F4F4F;
+}
+
+body.dark {
+  --bg: #121212;
+  --card: #1E1E1E;
+  --text: #E0E0E0;
+  --accent: #D4AF37;
+  --secondary: #A0A0A0;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.3s;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Cinzel Decorative", serif;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  background: var(--card);
+  border-bottom: 2px solid var(--accent);
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: bold;
+}
+
+.theme-btn {
+  background: var(--accent);
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: var(--card);
+  margin-top: 40px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+nav a:hover {
+  color: #D4AF37;
+  transition: 0.3s ease;
+}
+footer a {
+    color: #D4AF37;   
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #b8952e;   
+}
+        #logo {
+            font-size: 24px;
+            color: var(--accent);
+            letter-spacing: 1px;
+        }
+
+        a {
+            padding: 5px 10px;
+            text-decoration: none;
+            border-radius: 35px;
+            color: var(--text);
+        }
+
+        a:hover {
+            color: var(--accent);
+        }
+
+        #t-btn {
+            background-color: var(--accent);
+            color: var(--card);
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+        }
+
+        #t-btn:hover {
+            background-color: var(--secondary);
+            color: var(--text);
+        }
+
+        /* Gallery Section */
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: var(--accent);
+        }
+
+
+        #fm {
+            padding: 10px;
+            border: 1px solid var(--secondary);
+            border-radius: 5px;
+            width: 250px;
+        }
+
+        #btn {
+            background-color: var(--accent);
+            color: var(--card);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #btn:hover {
+            background-color: var(--secondary);
+            color: var(--text);
+        }
+
+        .image {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .image .im {
+            width:100%;
+            /* عرض ثابت */
+            height: 250px;
+            /* ارتفاع ثابت */
+            object-fit: cover;
+            /* يخلي الصورة كفر مظبوط */
+            border-radius: 10px;
+            /* زوايا ناعمة */
+            margin: 40px auto;
+            /* مسافة بين الصور */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            /* ظل خفيف */
+            filter: brightness(0.95);
+            /* درجة إضاءة بسيطة */
+        }
+
+
+
+        .image .im:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px var(--accent);
+        }
+
+        /* General */
+        body {
+            margin: 0;
+            background-color: var(--bg);
+            color: var(--text);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+/* تنسيق منطقة الأزرار في الهيدر */
+.auth-area {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#loginNav, #signupNav {
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: 1px solid var(--accent);
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#loginNav {
+    background: transparent;
+    color: var(--text);
+}
+
+#signupNav {
+    background: var(--accent);
+    color: var(--card);
+}
+
+#loginNav:hover {
+    background: var(--accent);
+    color: var(--card);
+}
+
+#signupNav:hover {
+    background: var(--secondary);
+    border-color: var(--secondary);
+}
+
+/* تعديل للهواتف عشان الأزرار ما تضربش الشكل */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .auth-area {
+        margin-top: 10px;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <h1 id="name">KEMET MUSE</h1>
+            <ul class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="great_kings.html">Great Kings</a>
+                <a href="museum.html" class="Active">The Museum</a>
+                <a href="famous-sites.html">Famous Sites</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="tickets.html">Tickets</a>
+                <a href="contact_us.html">Contact Us</a>
+            </ul>
+            <div class="auth-area">
+                <span id="navUser"></span>
+                <button id="loginNav">Login</button>
+                <button id="signupNav">Signup</button>
+                <button id="logoutNav">Logout</button>
+            </div>
+            <button class="theme-btn" onclick="toggleTheme()">🌙</button>
+        </nav>
+
+    </header> 
+   
+
+    <h1>The Gallery</h1>
+    
+
+    <div class="image">
+        <img class="im" src="media/i7.jpg" alt="tutankhamun ">
+        <img class="im" src="media/i8.jpg" alt="egypt's monuments">
+        <img class="im" src=" media/i3.jpg" alt="ramses2 ">
+        <img class="im" src=" media/i4.jpg" alt="tutankhamun">
+        <img class="im" src="media/i2.jpg" alt="egypt's monuments ">
+        <img class="im" src=" media/i6.jpg" alt="egypt's monuments">
+        <img class="im" src=" media/i5.jpg" alt="tutankhamun ">
+        <img class="im" src="media/i1.jpg" alt="egypt's monuments ">
+        <img class="im" src="media/i9.jpg" alt="egypt's monuments ">
+        <img class="im" src=" media/i11.jpg" alt="ramses2">
+        <img class="im" src=" media/i10.jpg" alt="ramses2 ">
+        <img class="im" src=" media/cleo.png" alt="كيلوبترا ">
+        <img class="im" src=" media/museum.jpeg" alt="المتحف ">
+        <img class="im" src=" media/a5.jpg" alt="رمسس ">
+        <img class="im" src=" media/khufo.png" alt="خوفو ">
+        <img class="im" src=" media/ts1.jpeg" alt="ramses2 ">
+        <img class="im" src=" media/ts2.jpeg" alt="ramses2 ">
+        <img class="im" src=" media/ts3.jpeg" alt="ramses2 ">
+        <img class="im" src=" media/ts4.jpeg" alt="ramses2 ">
+        <img class="im" src=" media/ts5.jpeg" alt="ramses2 ">
+        
+    
+    </div>
+    
+    <footer>
+        <p> © 2026 Ancient Egypt Project
+        </p>
+        <div>
+            <a href="https://Fasebook.com//">Fasebook</a>
+            <a href="https://Instagram.com//">Instagram</a>
+            <a href="https://X.com//">x</a>
+        </div>
+    </footer>
+
+    <script>
+        if (localStorage.getItem("isLoggedIn") !== "true") {
+          alert("You must login first");
+          window.location.href = "login.html";
+        }
+      </script>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

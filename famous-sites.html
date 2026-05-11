@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Kings of Ancient Egypt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Cinzel+Decorative:wght@400;700;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="./css/navbar-auth.css">
+
+    <link rel="stylesheet" href="css/global.css">
+    <style>
+        .search-section {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        #search {
+            width: 60%;
+            padding: 12px 20px;
+            font-size: 18px;
+            border: 2px solid var(--accent);
+            border-radius: 25px;
+            background-color: var(--card);
+            color: var(--text);
+            outline: none;
+            transition: 0.3s;
+        }
+
+        #search:focus {
+            box-shadow: 0 0 10px var(--accent);
+        }
+
+        @media(max-width:768px) {
+            #search {
+                width: 85%;
+            }
+        }
+
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: auto;
+            gap: 30px;
+            padding: 20px;
+        }
+
+        main {
+            flex: 3;
+        }
+
+        aside {
+            flex: 1;
+            background: var(--card);
+            padding: 20px;
+            border: 1px solid #eee;
+            height: fit-content;
+        }
+
+        article {
+            background: var(--card);
+            margin-bottom: 40px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        article:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-box iframe {
+            width: 100%;
+            height: 300px;
+            border: 0;
+            margin-top: 10px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 6px;
+        }
+
+        figcaption {
+            font-size: 14px;
+            color: var(--secondary);
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        @media (max-width:992px) {
+            .container {
+                flex-direction: column;
+            }
+
+            main,
+            aside {
+                width: 100%;
+            }
+        }
+
+        @media(max-width:768px) {
+            .nav-links {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+                padding: 10px 0;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+   <header>
+        <nav class="navbar">
+            <h1 id="name">KEMET MUSE</h1>
+            <ul class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="great_kings.html">Great Kings</a>
+                <a href="museum.html" class="Active">The Museum</a>
+                <a href="famous-sites.html">Famous Sites</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="tickets.html">Tickets</a>
+                <a href="contact_us.html">Contact Us</a>
+            </ul>
+            <div class="auth-area">
+                <span id="navUser"></span>
+                <button id="loginNav">Login</button>
+                <button id="signupNav">Signup</button>
+                <button id="logoutNav">Logout</button>
+            </div>
+            <button class="theme-btn" onclick="toggleTheme()">🌙</button>
+        </nav>
+
+    </header> 
+   
+
+    <header>
+        <h1>Famous Sites</h1>
+    </header>
+    <div class="search-section">
+        <input type="text" id="search" placeholder="Search for a site..." >
+    </div>
+    <div class="container">
+        <main>
+            <article>
+                <figure>
+                    <h2>Abu Simbel Temple</h2>
+                    <img src="media/bs1.jpeg" alt="Abu Simbel">
+                    <figcaption>Main facade of Abu Simbel Temple</figcaption>
+                </figure>
+                <p>
+                    The Abu Simbel Temple, located south of Aswan in Egypt, is considered one of the greatest monuments
+                    of Pharaoh
+                    Ramesses II. It is entirely carved into the mountain and is famous for the unique phenomenon of the
+                    sun
+                    aligning on the "Holy of Holies" (Sanctuary) on February 22nd and October 22nd.
+                </p>
+            </article>
+
+            <article>
+                <figure>
+                    <h2>Hatshepsut Temple</h2>
+                    <img src="media/bs2.jpeg" alt="Hatshepsut Temple">
+                    <figcaption>The Mortuary Temple of Queen Hatshepsut</figcaption>
+                </figure>
+                <p>
+                    The Mortuary Temple of Hatshepsut, located at Deir el-Bahari, Luxor, is a masterpiece of ancient
+                    Egyptian
+                    architecture designed by Senemut for the 18th Dynasty female Pharaoh Hatshepsut.
+                </p>
+            </article>
+
+            <article>
+                <figure>
+                    <h2>Grand Egyptian Museum</h2>
+                    <img src="media/bs3.jpeg" alt="GEM">
+                    <figcaption>The Grand Egyptian Museum</figcaption>
+                </figure>
+                <p>
+                    The Grand Egyptian Museum (GEM), located near the Giza Pyramids, is the world's largest museum
+                    dedicated to a
+                    single civilization. Housing over 100,000 artifacts, it features the full Tutankhamun collection, a
+                    grand
+                    staircase, and modern conservation labs.
+                </p>
+            </article>
+            <article>
+                <figure>
+                    <h2>The Great Pyramid of Giza</h2>
+                    <img src="media/bs4.jpg" alt="Great Pyramid">
+                    <figcaption>The Great Pyramid of Giza</figcaption>
+                </figure>
+                <p>The oldest and largest of the three pyramids in Giza,built for thr Pharaoh Khufu around 2560 BCE, it is the only one of the Seven Wonders of the Ancient World that is still largely intact.
+                    The pyramid is aligned with extraordinary precision to true north.It was built using approximately 2.3 million stone blocks.For over 3,800 years,it was the tallest man-made structure in the world.
+                </p>
+            </article>
+               <article>
+                <figure>
+                    <h2>Dendera Temple Complex</h2>
+                    <img src="media/bs5.jpg" alt="Dendera Temple">
+                    <figcaption>Dendera Temple Complex</figcaption>
+                </figure>
+                <p>Located about 60 km north of Luxor,it is one of the best-preserved temple complexes in Egypt.
+                    The main temple is dedicated to Hathor.The temple is renowned for its spectacular astronomical ceiling,which still retains its original vibrant colors.
+                </p>
+            </article>
+              <article> 
+                    <figure>
+                        <h2>Tomb of Tutankhamun</h2>
+                        <img src="media/bs6.jpg" alt="Tomb of Tutankhamun">
+                        <figcaption>Tomb of Tutankhamun</figcaption>
+                    </figure>
+                    <p>Discovered in 1922 by British archaeologist Howard Carter in the Valley of the Kings.It is famous because it was found nearly intact,filled with extraordinary treasures.
+                        Unlike mummies which are in museums,King Tut's mummy is still housed inside his tomb in a climate-controlled glass case.
+                    </p>
+            </article>
+        </main>
+
+        <aside>
+            <h2>Location Map</h2>
+            <p>Explore the real locations of these sites on the map below:</p>
+            <div class="map-box">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11342.345!2d31.1342!3d29.9792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjnCsDU4JzQ1LjEiTiAzMcKwMDgnMDMuMSJF!5e0!3m2!1sen!2seg!4v123456789">
+                </iframe>
+            </div>
+        </aside>
+    </div>
+    <footer>
+        <p> © 2026 Ancient Egypt Project
+        </p>
+        <div>
+            <a href="https://Fasebook.com//">Fasebook</a>
+            <a href="https://Instagram.com//">Instagram</a>
+            <a href="https://X.com//">x</a>
+        </div>
+    </footer>>
+
+
+    <script>
+        if (localStorage.getItem("isLoggedIn") !== "true") {
+          alert("You must login first");
+          window.location.href = "login.html";
+        }
+      </script>
+    <script src="./js/auth.js"></script>
+    <script src="./js/main.js"></script>
+
+</body>
+
+</html>

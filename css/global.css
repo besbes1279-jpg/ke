@@ -1,0 +1,174 @@
+:root {
+  --bg: #F5F5DC;
+  --card: #FFFFFF;
+  --text: #2C2C2C;
+  --accent: #8B4513;
+  --secondary: #2F4F4F;
+}
+
+body.dark {
+  --bg: #121212;
+  --card: #1E1E1E;
+  --text: #E0E0E0;
+  --accent: #D4AF37;
+  --secondary: #A0A0A0;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.3s;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Cinzel Decorative", serif;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  background: var(--card);
+  border-bottom: 2px solid var(--accent);
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: bold;
+}
+
+.theme-btn {
+  background: var(--accent);
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: var(--card);
+  margin-top: 40px;
+}
+
+nav a {
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+nav a:hover {
+  color: #D4AF37;
+  /* اللون الذهبي عند الوقوف */
+  transition: 0.3s ease;
+  /* حركة ناعمة للتغيير */
+}
+footer a {
+    color: #D4AF37;   /* اللون الذهبي */
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #b8952e;   /* درجة أغمق للهوفر */
+}
+.user-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-area button {
+  background: var(--accent);
+  color: var(--card);
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.user-area span {
+  font-weight: bold;
+}
+
+.auth-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#navUser {
+  color: #f5c542;
+  font-weight: bold;
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.auth-area button {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 
+    background-color 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+#loginNav {
+  background-color: #3498db;
+  color: white;
+}
+
+#loginNav:hover {
+  background-color: #2c80b4;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+#signupNav {
+  background-color: #2ecc71;
+  color: white;
+}
+
+#signupNav:hover {
+  background-color: #27ae60;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+#logoutNav {
+  background-color: #e74c3c;
+  color: white;
+}
+
+#logoutNav:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
